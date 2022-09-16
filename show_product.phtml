@@ -1,0 +1,122 @@
+<div style="width:70%; margin:auto ; ">
+
+<div class="my-2 border border-secondary roundedtext-center">
+    <section class="d-flex justify-content-between">
+        <article class="col p-4 d-flex flex-column position-static text-center">
+            <strong class="d-inline-block mb-2 text-primary">
+                <?= $product['category'] ?>
+            </strong>
+            <h3 class="mb-0" id="title"><?= $product['title'] ?></h3>
+            <p>Rédiger par 
+            <strong>
+            <?= $product['firstname'] ?> 
+            <?= $product['lastname'] ?>
+                </strong> 
+            </p> Le
+            <time
+                    class="mb-1 text-muted"
+                    datetime="<?= htmlspecialchars( $product['date_creation'] ); ?>">
+                    <?= htmlspecialchars( $product['DateMaj'] ); ?>
+            </time>
+           <div>
+            <strong class="text-danger"><?= $product['price_sale'] ?> DT</strong>
+           </div>
+            <div class="mb-5">
+                <p class="card-text mb-auto ml-1">
+                    <?= $product['description'] ?>
+                </p>
+            </div>  
+            <div class="mt-5 d-flex justify-content-center">
+            <a href="#" class="avis"><i class="fa-star fas " ></i></a>
+            <a href="#" class="avis"><i class="fa-star fas " ></i></a>
+            <a href="#" class="avis"><i class="fa-star fas " ></i></a>
+            <a href="#" class="avis"><i class="fa-star fas " ></i></a>
+            <a href="#" class="avis"><i class="fa-star fas " ></i></a>
+            <div class="ml-4">
+                <a  href="commande_auth.php" id="panier">
+                <small>Ajouter au panier</small>
+                <i class="fa-shopping-cart fas"></i>
+                </a>
+            </div> 
+            </div>           
+        </article>
+        <div class="border border-secondary">
+            <img class="bd-placeholder-img " width="400" height="400" src="img/<?= $product['image'] ?>" >
+        </div>
+    
+    </section>
+</div>
+<div class="row bootstrap snippets bootdeys" >
+    <div class=" col-sm-12">
+        <div class="comment-wrapper">
+        <div class="panel panel-info">
+        <div class="panel-heading"> Comment panel
+
+        </div>
+        <div class="panel-body">
+            <form action="comment.php" method="post">
+                <input type="hidden" name="productId" value="<?= $product['id'] ?>">
+
+                <input 
+                    type="text" 
+                    name="pseudo" 
+                    class="form-control" 
+                    placeholder="Pseudo">
+
+                <textarea 
+                    class="form-control" 
+                    name="commentaire" 
+                    placeholder="write a comment..." rows="3">
+                </textarea>
+                <br>
+                <button type="submit" class="btn btn-info mx-0 px-0 float-right" style="width: 70px;">Post</button>
+            </form>
+        <div class="clearfix">
+
+        </div>
+        <hr>
+        <ul class="media-list">
+            <?php foreach($comments as $comment) : ?>
+            <li class="media"> 
+                <a href="#" class="pull-left">
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle"> 
+                </a>
+                <div class="media-body"> 
+                    <span class="text-muted pull-right">
+                        <small class="text-muted">
+                        <time
+                        class="mb-1 text-muted"
+                        datetime="<?= htmlspecialchars( $comment['date_comment'] ); ?>">
+                        <?= htmlspecialchars( $comment['DateMaj'] ); ?>
+                        </time>
+                        </small> 
+                        </span> 
+                        <strong class="text-success">@<?= $comment['pseudo'] ?></strong>
+                        <p> <?= $comment['comment'] ?> 
+                            <a href="#">#consecteturadipiscing</a>.
+                        </p>
+                </div>
+            </li>
+            <?php endforeach ; ?>
+            <li class="media"> 
+                <a href="#" class="pull-left">
+                <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle"> 
+                </a>
+                <div class="media-body"> <span class="text-muted pull-right"> <small class="text-muted">30 min ago</small> </span> <strong class="text-success">@LaurenceCorreil</strong><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.</p>
+                </div>
+            </li>
+            <li class="media"> 
+                <a href="#" class="pull-left">
+                <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle"> 
+                </a>
+                <div class="media-body"> <span class="text-muted pull-right"> <small class="text-muted">30 min ago</small> </span> <strong      class="text-success">@JohnNida</strong><p> Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </li>
+        </ul>
+</div>
+</div>
+</div>
+</div>
+</div>             
+</div>

@@ -1,0 +1,111 @@
+<aside class="w-50 addP"  style="margin:auto;">
+<form  method="POST"> 
+  <fieldset class="border border-info">
+    <legend class="bg-warning py-1">Ajouter votre produit</legend>
+        <ul>
+            <li>
+                <label class="text-dark" for="" >Nom :</label>
+                <select
+                id="author"
+                name="nameauth"
+                style="width: 192px;"
+                class="custom-select<?php if(!empty($error['nameauth'])) : ?> is-invalid <?php endif  ; ?>">
+                  <option>Choisir un auteur</option>
+              <?php foreach($authors as $author ) : ?>
+                <?php if( $author['id'] == $author ) : ?>
+                  <option
+                    selected
+                    value="<?= intval( $author['id'] ) ?>">
+                    <?= htmlspecialchars( $author['firstname'] ) ?>
+                    <?= htmlspecialchars( $author['lastname'] ) ?>
+                  </option>
+                  <?php else : ?>
+                    <option
+                    selected
+                    value="<?= intval( $author['id'] ) ?>">
+                    <?= htmlspecialchars( $author['firstname'] ) ?>
+                    <?= htmlspecialchars( $author['lastname'] ) ?>
+                  </option>
+                  <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
+                <?php if(!empty($error['nameauth'])) : ?>
+                <div class="invalid-feedback text-danger mt-0"><?= $error['nameauth'] ; ?></div>
+                <?php endif  ; ?>
+            </li>
+            <li>
+                <label class="text-dark" for="">Produit :</label>
+                <input type="text"
+                 name="titlep"
+                 class="form-control<?php if(!empty($error['titlep'])) : ?> is-invalid <?php endif  ; ?>">
+
+                <?php if(!empty($error['titlep'])) : ?>
+                <div class="invalid-feedback text-danger"><?= $error['titlep'] ; ?></div>
+                <?php endif  ; ?>
+            </li>
+            <li>
+              <label class="text-dark" for="">Categorie :</label>
+              <select
+              id="category"
+              name="categories"
+              style="width: 192px;"
+              class="custom-select<?php if(!empty($error['categories'])) : ?> is-invalid <?php endif  ; ?>">
+              <option>Choisir une catégorie</option>
+              <?php foreach($categories as $category ) : ?>
+                <?php if( $category['id'] == $category ) : ?>
+                  <option
+                    selected
+                    value="<?= htmlspecialchars( $category['id'] ) ?>">
+                    <?= htmlspecialchars( $category['category'] ) ?>
+                  </option>
+                <?php else : ?>
+                  <option
+                    value="<?= htmlspecialchars( $category['id'] ) ?>">
+                    <?= htmlspecialchars( $category['category'] ) ?>
+                  </option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
+                <?php if(!empty($error['categories'])) : ?>
+                <div class="invalid-feedback text-danger"><?= $error['categories'] ; ?></div>
+                <?php endif  ; ?>
+            </li>
+            <li>
+                <label class="text-dark" for="">Description :</label>
+                <textarea 
+                name="description" 
+                class="form-control<?php if(!empty($error['description'])) : ?> is-invalid <?php endif  ; ?>"
+                id="" cols="19" 
+                rows="2">
+              </textarea>
+                <?php if(!empty($error['description'])) : ?>
+                <div class="invalid-feedback text-danger"><?= $error['description'] ; ?></div>
+                <?php endif  ; ?>
+            </li>
+            <li>
+                <label class="text-dark" for="">Prix :</label>
+                <input type="text"
+                 name="price"
+                 class="form-control<?php if(!empty($error['price'])) : ?> is-invalid <?php endif  ; ?>">
+                 <?php if(!empty($error['price'])) : ?>
+                 <div class="invalid-feedback text-danger"><?= $error['price'] ; ?></div>
+                 <?php endif  ; ?>
+            </li>
+            <li>
+                <label class="text-dark" for="">Photo :</label>
+                <input 
+                type="file" 
+                name="photo" 
+                class="form-control<?php if(!empty($error['photo'])) : ?> is-invalid <?php endif  ; ?>"
+                placeholder="file..">
+                <?php if(!empty($error['photo'])) : ?>
+                <div class="invalid-feedback text-danger"><?= $error['photo'] ; ?></div>
+                <?php endif  ; ?>
+            </li>
+        </ul>
+        <button type="submit" name="envoyer" class="bg-warning mb-2 py-1 mr-5"> Envoyer</button>
+        <a href="#" class="text-dark ml-5">s'inscrire</a> |
+        <a href="#" class="text-dark">déja inscrit</a>
+    </fieldset>
+  </form> 
+</aside>

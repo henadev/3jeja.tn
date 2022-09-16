@@ -1,0 +1,79 @@
+<div class="table-responsive mx-2">
+    <?php if( $countproducts > 0 ) : ?>
+          <small class="float-right m-5 text-primary">(<?= $countproducts; ?>) products</small>
+          <small class="float-right m-5 text-primary">(<?= $countproducts; ?>) vu</small>
+    <?php endif; ?>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Photo</th>
+              <th scope="col">Price Sale</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach($products as $product) : ?>
+            <tr>
+              <td><?= $product['id_product'] ?></td>
+              <td><?= $product['title'] ?></td>
+              <td><?= $product['Excerpt'] ?></td>
+              <td><img src="img/<?= $product['image'] ?>" alt="img" width="20%" heigth="20%"></td>
+              <td><?= $product['price_sale'] ?></td>
+              <td>
+                <a
+                  class="btn btn-warning"
+                  title="Modifier le produit"
+                  href="admin_product_update.php?id=<?= intval( $product['id_product'] ); ?>">
+                  <i class="fa fa-pen-nib" aria-hidden="true"></i>
+                </a>
+              </td>
+              <td>
+                <button type="button" 
+                  class="btn btn-danger" 
+                  data-toggle="modal" 
+                  data-target="#myModal<?= $product['id_product'] ?>">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+<!-- modal content -->
+                  <div id="myModal<?= $product['id_product'] ?>"  class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+                          <p>Voulez vous supprimer l'article N°<?= $product['id_product'] ?></p>
+                        </div>
+
+                        <div class="modal-footer">
+                          <a class="btn btn-danger btn-lg "
+                            data-indice="<?= intval( $post['Id'] ); ?>"
+                            title="Supprimer le post"
+                            href="admin_product_delete.php?id=<?= $product['id_product'] ?>">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-dark btn-lg"
+                            data-dismiss="modal"
+                            title="J'abandonne !"
+                            href="admin_product_index.php">
+                            <i class="fa fa-hand-paper" aria-hidden="true"></i>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                </div>
+              </td>
+            </tr>
+            <?php endforeach ; ?>
+          </tbody>
+        </table>
+      </div>

@@ -1,0 +1,20 @@
+<div class="mr-3">
+<form method="post" action="admin_category_update.php" class="mx-5"> 
+  <input type="hidden" name="id" value ="<?= intval($category['id']) ?>">
+      <fieldset class="pr-2">
+        <legend class="text-center display-4 pb-2  bg-secondary">Mise à jour d'un produit</legend>                      
+    <ul>
+       <li>
+         <label class="text-dark" for="">Categorie :</label>
+         <input type="text"
+           name="category"
+           class="form-control"
+           value="<?= $category['category'] ?>">
+       </li> 
+    </ul>               
+      <div class="modal-footer">
+        <button name="envoyer" type="submit"  class="btn btn-info"> Save changes</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

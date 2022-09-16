@@ -1,0 +1,67 @@
+<div class="table-responsive mx-2">
+    <?php if( $countauthors > 0 ) : ?>
+          <small class="float-right m-5 text-primary">(<?= $countauthors; ?>) authors</small>
+          <small class="float-right m-5 text-primary">(<?= $countauthors; ?>) vu</small>
+    <?php endif; ?>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">FirstName</th>
+              <th scope="col">LastName</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach($authors as $author) : ?>
+            <tr>
+              <td><?= $author['id'] ?></td>
+              <td><?= $author['firstname'] ?></td>
+              <td><?= $author['lastname'] ?></td>
+              <td>
+                <button type="button" 
+                  class="btn btn-danger" 
+                  data-toggle="modal" 
+                  data-target="#myModal<?= $author['id'] ?>">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+<!-- modal content -->
+                  <div id="myModal<?= $author['id'] ?>"  class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button> 
+                        </div>
+
+                        <div class="modal-body">
+                          <p>Voulez vous supprimer l'auteur N°<?= $author['id'] ?></p>
+                        </div>
+
+                        <div class="modal-footer">
+                          <a class="btn btn-danger btn-lg "
+                            data-indice="<?= intval( $author['id'] ); ?>"
+                            title="Supprimer le post"
+                            href="admin_author_delete.php?id=<?= $author['id'] ?>">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-dark btn-lg"
+                            data-dismiss="modal"
+                            title="J'abandonne !"
+                            href="admin_author_index.php">
+                            <i class="fa fa-hand-paper" aria-hidden="true"></i>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                </div>
+              </td>
+            </tr>
+            <?php endforeach ; ?>
+          </tbody>
+        </table>
+      </div>

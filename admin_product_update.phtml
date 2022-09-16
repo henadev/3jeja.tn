@@ -1,0 +1,100 @@
+<div class="mr-3">
+<form method="post" action="admin_product_update.php" class="mx-5"> 
+  <input type="hidden" name="id" value ="<?= intval($product['id']) ?>">
+      <fieldset class="pr-2">
+        <legend class="text-center display-4 pb-2  bg-secondary">Mise à jour d'un produit</legend>                      
+    <ul>
+       <li>
+           <label class="text-dark"  for="" >Nom :</label>
+           <select
+           id="author"
+           name="nameauth"
+           style="width: 192px;"
+           class="custom-select">
+             <option>Choisir un author</option>
+             <?php foreach($authors as $author ) : ?>
+           <?php if( $author['id'] == $product['id_author'] ) : ?>
+             <option
+               selected
+               value="<?= htmlspecialchars( $author['id'] ) ?>">
+               <?= htmlspecialchars( $author['firstname'] ) ?>
+               <?= htmlspecialchars( $author['lastname'] ) ?>
+             </option>
+           <?php else : ?>
+             <option
+               value="<?= htmlspecialchars( $author['id'] ) ?>">
+               <?= htmlspecialchars( $author['firstname'] ) ?>
+               <?= htmlspecialchars( $author['lastname'] ) ?>
+             </option>
+           <?php endif; ?>
+         <?php endforeach; ?>
+       </select>
+       </li>
+       <li>
+           <label class="text-dark" for="">Produit :</label>
+           <input type="text"
+           name="titlep"
+           class="form-control"
+           value="<?= $product['title'] ?>">
+
+           <?php if(!empty($error['titlep'])) : ?>
+           <div class="invalid-feedback text-danger"><?= $error['titlep'] ; ?></div>
+           <?php endif  ; ?>
+       </li>
+       <li>
+         <label class="text-dark" for="">Categorie :</label>
+         <select
+         id="category"
+         name="categories"
+         style="width: 192px;"
+         class="custom-select<?php if(!empty($error['categories'])) : ?> is-invalid <?php endif  ; ?>">
+         <option>Choisir une catégorie</option>
+         <?php foreach($categories as $category ) : ?>
+           <?php if( $category['id'] == $product['id_category'] ) : ?>
+             <option
+               selected
+               value="<?= htmlspecialchars( $category['id'] ) ?>">
+               <?= htmlspecialchars( $category['category'] ) ?>
+             </option>
+           <?php else : ?>
+             <option
+               value="<?= htmlspecialchars( $category['id'] ) ?>">
+               <?= htmlspecialchars( $category['category'] ) ?>
+             </option>
+           <?php endif; ?>
+         <?php endforeach; ?>
+       </select>
+       </li>
+       <li>
+           <label class="text-dark" for="">Description :</label>
+           <textarea 
+           name="description" 
+           class="form-control"
+           cols="19" 
+           rows="2"
+           ><?= $product['Excerpt'] ?></textarea>
+       </li>
+       <li>
+           <label class="text-dark" for="">Prix :</label>
+           <input type="text"
+           name="price"
+           class="form-control"
+           value="<?= $product['price_sale'] ?>">
+       </li>
+       <li>
+           <label class="text-dark" for="">Photo :</label>
+           <input 
+           type="file" 
+           name="photo" 
+           class="form-control"
+           placeholder="file.."
+           value="img/<?= $product['image'] ?>">
+       </li>
+     </ul>
+                     
+      <div class="modal-footer">
+        <button name="envoyer" type="submit"  class="btn btn-info"> Save changes</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

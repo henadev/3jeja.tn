@@ -1,0 +1,174 @@
+body{
+    margin:0;
+}
+.nav1{
+    flex-basis: 60%;
+}
+.nav2{
+    flex-basis: 40%;
+}
+.logo{
+    width:40%;
+    padding: 0px 0px;
+}
+.nav1 li a{
+    color: white;
+}
+.nav1 li a:hover{
+    color: rgb(238, 246, 7);
+    border-bottom: 1px solid rgb(208, 201, 1);
+}
+.second-nav{
+    flex-basis: 15%; 
+    border-right: 1px solid rgba(161, 159, 159, 0.589);
+    margin-bottom: 10rem;
+}
+.corp{
+    flex-basis: 85%; 
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+}
+.show-product{
+    flex-basis: 30%;
+    flex-wrap: wrap;
+}
+.banner{
+    background-image: url('../img/ban.png');
+    background-size: cover;
+    background-position: center;
+    padding: 11rem 0 ;
+    
+}
+
+.navcategory{
+    list-style-type: none;
+}
+.second-nav p{
+    margin-top: 7rem;
+    margin-bottom:0 ;
+}
+.li-category{
+    line-height: 0.5rem;
+    border-bottom: 1px solid rgba(31, 136, 196, 0.692);
+    margin-right: 2rem;
+}
+li a{
+    color: rgba(80, 78, 78, 0.719);
+    font-size: 0.9rem;
+}
+ul{
+    list-style-type: none;
+    padding-left: 1rem;
+}
+fieldset{
+    width: 100%;
+    margin: 2rem 0rem 4rem 1rem;
+    border: none;
+    box-shadow: 0 0 50px rgba(100, 99, 99, 0.9);
+    opacity: 0.9;
+}
+legend{
+    width: 60%;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    margin-bottom:1rem;
+}
+fieldset li{
+    width: 100%;
+    line-height: 2rem;
+}
+fieldset li div{
+    margin-top: 0;
+}
+label{
+    width: 28%;
+}
+input[type=file]{
+    width: 310px;
+}
+button[type=submit]{
+    width: 20%;
+    margin-left:35%;
+    border: none;
+    border-radius: 5%;
+}
+fieldset a{
+    color: white;
+    font-size: 0.9rem;
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+video{
+    margin: 4rem 1rem 0 0;
+
+}
+/* ***********************************************login */
+
+.form-signin {
+    width: 30%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  /* ***************************************************************** add-product*/
+  .addP{
+      margin:auto; 
+  }
+  /* ***************************************************************show-product */
+  .avis{
+      border: 0;
+      margin: 0;
+      padding: 0;
+  }
+  .fa-star{
+      font-size: 20px;
+      margin-top: 5px;
+  }
+  .avis{
+      color: dimgray;
+  }
+  .avis:hover{
+      color: rgb(241, 230, 68);
+  }
+  .fa-shopping-cart{
+    font-size: 28px;
+  }
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
