@@ -1,28 +1,28 @@
 <div class="text-center" style="margin-bottom:170px;margin-top:100px">
-<form class="form-signin" method="post">
-  <img class="mb-4" src="/docs/4.6/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only ">Email address</label>
-  <input type="email" 
-    name="inputEmail"
-    class="form-control<?php if(!empty($error['inputEmail'])) : ?> is-invalid <?php endif  ; ?> " placeholder="Email address"  
-    required autofocus>
-    <?php if(!empty($error['inputEmail'])) : ?>
-      <div class="invalid-feedback text-danger"><?= $error['inputEmail'] ; ?></div>
-    <?php endif  ; ?>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password"
-    name="inputPassword" 
-    class="form-control<?php if(!empty($error['inputPassword'])) : ?> is-invalid <?php endif  ; ?> " 
-    placeholder="Password" 
-    required>
-    <?php if(!empty($error['inputPassword'])) : ?>
-      <div class="invalid-feedback text-danger"><?= $error['inputPassword'] ; ?></div>
-    <?php endif  ; ?>
-  <div class="checkbox my-2">
-      <input type="checkbox" value="remember-me"> Remember me
-  </div>
-  <button class="btn btn-lg btn-primary btn-block w-50" type="submit" style="margin-left:70px;">Sign in</button>
-  
-</form>
+  <form class="form-signin" method="post">
+    <img class="mb-4" src="/docs/4.6/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only ">Email address</label>
+    <input type="email" 
+      name="inputEmail"
+      class="form-control<?php if(!empty($error['inputEmail'])) : ?> is-invalid <?php endif  ; ?> " placeholder="Email address"  
+      required autofocus>
+      <?php if(!empty($error['inputEmail'])) : ?>
+        <div class="invalid-feedback text-danger"><?= $error['inputEmail'] ; ?></div>
+      <?php endif  ; ?>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password"
+      name="inputPassword" 
+      class="form-control<?php if(!empty($error['inputPassword'])) : ?> is-invalid <?php endif  ; ?> " 
+      placeholder="Password" 
+      required>
+      <?php if(!empty($error['inputPassword'])) : ?>
+        <div class="invalid-feedback text-danger"><?= $error['inputPassword'] ; ?></div>
+      <?php endif  ; ?>
+    <div class="checkbox my-2">
+        <input type="checkbox" value="remember-me"> Remember me
     </div>
+    <button class="btn btn-lg btn-primary btn-block w-50" type="submit" style="margin-left:70px;">Sign in</button>
+    
+  </form>
+</div>

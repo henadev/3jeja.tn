@@ -27,11 +27,11 @@
                 <img src="img/3jeja.png" alt="logo-3jeja" class="logo">
               </a>
               </div>
-              <ul class="nav1 me-lg-auto mb-2 d-flex justify-content-arround mb-md-0">
+              <ul class="nav1 me-lg-auto mb-2 d-flex justify-content-center align-items-center mb-md-0">
                 <li><a href="index.php" class="nav-link px-2 ">Accueil</a></li>
                 <li><a href="All_product.php" class="nav-link px-2 ">Produits</a></li>
-                <li><a href="#" class="nav-link px-2 ">Commande</a></li>
-                <li><a href="login.php" class="nav-link px-2 ">Mon Espace</a></li>
+                <li><a href="commande_auth.php" class="nav-link px-2 ">Commande</a></li>
+                <li><a href="my_space.php" class="nav-link px-2 text-center">Mon Espace</a></li>
               </ul>
           
             <div class="nav2 d-flex flex-direction-row justify-content-end">
@@ -45,7 +45,7 @@
               <?php if(substr($template,0,6)=='admin_') : ?>
               <div class="text-end nav-item">
                 <a class="btn text-white me-2" href="#">Admin</a>
-                <a class="btn btn-outline-light me-2" href="deconnect.php">Log Out</a>
+                <a class="btn btn-outline-light me-2 " href="deconnect.php">Log Out</a>
               </div>
             
               
@@ -58,7 +58,7 @@
                   <?php else : ?>
               <div class="text-end<?php if(substr($template,0,6) !='admin_') echo 'active' ;  ?> ">
                <a class="btn btn-outline-light me-2" href="login.php">Login</a>
-               <a class="btn btn-warning" href="registre_auth.php">Sign-up</a>
+               <a class="btn btn-warning px-1" href="registre_auth.php">Sign-up</a>
               </div>
                   <?php endif ; ?>
               <?php endif ; ?>
@@ -99,7 +99,7 @@
         </section>
     </main>
     <footer class="bg-info container-fluid py-5 ">
-        
+        <p class="text-center text-white"><i class="fa-sharp fa-solid fa-copyright"></i> Copyrigth @Hana Ben Alaya 2022</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

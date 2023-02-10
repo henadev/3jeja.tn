@@ -1,8 +1,7 @@
 <?php if(!empty($products)) : ?>
-<div class="d-flex justify-content-between "> 
-
+  <div class="d-flex justify-content-between flex-wrap my-5 mx-0 px-0"> 
                 <?php foreach($products as $product) : ?>
-                <div class="row mx-0 my-2 show-product border border-info rounded overflow-hidden d-flex justify-content-between ">
+                <div class="row mx-3 my-2 show-product border border-secondary rounded overflow-hidden d-flex justify-content-between ">
                   <div >
                     <div class=" row g-0  mb-4 shadow-sm h-md-250 position-relative ml-0 ">
                       <div class="col p-4 d-flex flex-column position-static">
@@ -20,13 +19,13 @@
                         <img class="bd-placeholder-img" width="150" height="150" src="img/<?= $product['image'] ?>" >
                       </div>
                       <p class="card-text mb-auto ml-1"><?= $product['Excerpt'] ?>[...]</p>
-                      <a href="show_product.php?id=<?= intval( $product['id_product'] ); ?>"  class=" details stretched-link text-dark border rounded bg-warning text-center mb-2 px-3 py-1" style="
+                      <a href="show_product.php?id=<?= intval( $product['id_product'] ); ?>"  class=" details stretched-link text-dark border rounded bg-warning text-center mt-4 px-3 py-1" style="
                     margin-left: 150px;">Détails..</a>
                   </div>
                 </div>
                 </div>
                 <?php endforeach ;?>
-        </div>
+            </div>
           <?php else : ?>
               
                 <p class=" mt-5 text-center text-muted display-4"><?= $msg ?></p>

@@ -53,7 +53,7 @@ if(array_key_exists('inputEmail',$_POST)){
         exit();
     }else{
         echo "verifier votre cordonnee";
-        header('Location: registre_auth.php');
+         header('Location: registre_auth.php');
         exit();
     }
     

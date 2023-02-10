@@ -13,7 +13,7 @@ $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 // echo "Connecté à $dbname sur $host avec succès.";
 $id_product = $_GET['id'];
-var_dump($id_product);
+// var_dump('');
 
 $query = $pdo -> prepare(
   '
